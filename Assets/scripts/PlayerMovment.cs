@@ -17,24 +17,24 @@ public class PlayerMovment : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("s"))
         {
             transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;
         }
-        else if (Input.GetKey("d") && !Input.GetKey(KeyCode.LeftShift))
+        else if (Input.GetKey("s") && !Input.GetKey(KeyCode.LeftShift))
         {
             transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
         }
-        else if (Input.GetKey("a"))
+        else if (Input.GetKey("w"))
         {
             transform.position -= transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
         }
 
-        if (Input.GetKey("w") && !Input.GetKey("s"))
+        if (Input.GetKey("d") && !Input.GetKey("a"))
         {
             transform.position += transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
         }
-        else if (Input.GetKey("s") && !Input.GetKey("w"))
+        else if (Input.GetKey("a") && !Input.GetKey("d"))
         {
             transform.position -= transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
         }
