@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Torch : MonoBehaviour
 {
-    
+    bool Used;
     bool InProximityTorch;
     GameObject MainLight;
     // Start is called before the first frame update
@@ -15,10 +15,11 @@ public class Torch : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)&& InProximityTorch == true) 
+        if(Input.GetKeyDown(KeyCode.Space)&& InProximityTorch == true && Used == false) 
         {
             MainLight.GetComponent<Light>().intensity += 1;
             transform.GetChild(0).gameObject.SetActive(false);
+            Used = true;
         }
     }
     private void OnTriggerEnter(Collider other)
