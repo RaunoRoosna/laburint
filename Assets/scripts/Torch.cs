@@ -19,7 +19,6 @@ public class Torch : MonoBehaviour
         {
             MainLight.GetComponent<Light>().intensity += 1;
             transform.GetChild(0).gameObject.SetActive(false);
-
         }
     }
     private void OnTriggerEnter(Collider other)
