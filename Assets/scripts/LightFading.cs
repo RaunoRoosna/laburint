@@ -18,10 +18,10 @@ public class LightFading : MonoBehaviour
 
     IEnumerator Fade()
     {
-        while(light.intensity > 0)
+        while(light.range > 0)
         {
-            light.intensity -= FS;
-            yield return new WaitForSeconds(0.1f);
+            light.range -= FS;
+            yield return new WaitForSeconds(0.01f);
         }
         if (MainLight == true) 
         {
