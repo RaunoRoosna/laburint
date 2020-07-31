@@ -8,7 +8,7 @@ public class LightFading : MonoBehaviour
     Light light;
     public bool MainLight;
     public RectTransform LooseScreen;
-
+    public float FS2;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,7 @@ public class LightFading : MonoBehaviour
         while(light.range > 0)
         {
             light.range -= FS;
+            light.intensity -= FS2;
             yield return new WaitForSeconds(0.01f);
         }
         if (MainLight == true) 

@@ -17,7 +17,8 @@ public class Torch : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space)&& InProximityTorch == true && Used == false) 
         {
-            MainLight.GetComponent<Light>().range += 1;
+            MainLight.GetComponent<Light>().range += 5;
+            MainLight.GetComponent<Light>().intensity += 0.5f;
             transform.GetChild(0).gameObject.SetActive(false);
             Used = true;
         }
